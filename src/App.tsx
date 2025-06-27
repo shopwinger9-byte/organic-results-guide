@@ -10,12 +10,18 @@ import ServicesPage from "./pages/Services";
 import PricingPage from "./pages/PricingPage";
 import Contact from "./pages/Contact";
 import CaseStudies from "./pages/CaseStudies";
+import TechStartupCaseStudy from "./pages/case-studies/TechStartup";
 import Blog from "./pages/Blog";
 import Careers from "./pages/Careers";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import CookiePolicy from "./pages/CookiePolicy";
 import KeywordResearch from "./pages/KeywordResearch";
+import OnPageSEO from "./pages/OnPageSEO";
+import TechnicalSEO from "./pages/TechnicalSEO";
+import LinkBuilding from "./pages/LinkBuilding";
+import LocalSEO from "./pages/LocalSEO";
+import ContentStrategy from "./pages/ContentStrategy";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -33,12 +39,18 @@ const App = () => (
           <Route path="/pricing" element={<PricingPage />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/case-studies" element={<CaseStudies />} />
+          <Route path="/case-studies/tech-startup" element={<TechStartupCaseStudy />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
           <Route path="/cookie-policy" element={<CookiePolicy />} />
           <Route path="/keyword-research" element={<KeywordResearch />} />
+          <Route path="/on-page-seo" element={<OnPageSEO />} />
+          <Route path="/technical-seo" element={<TechnicalSEO />} />
+          <Route path="/link-building" element={<LinkBuilding />} />
+          <Route path="/local-seo" element={<LocalSEO />} />
+          <Route path="/content-strategy" element={<ContentStrategy />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -2,6 +2,7 @@
 import "https://deno.land/x/xhr@0.1.0/mod.ts";
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+import { Resend } from "npm:resend@2.0.0";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -49,26 +50,34 @@ serve(async (req) => {
       throw new Error('Failed to save submission');
     }
 
-    // Send email notification (using a simple email service)
-    const emailBody = `
-New Contact Form Submission from SEO Your Company
+    // Initialize Resend
+    const resend = new Resend('re_bADrfeEs_DvyopW54X3w7aGvm4otGbFnT');
 
-Name: ${firstName} ${lastName}
-Email: ${email}
-Company: ${company || 'Not provided'}
-Website: ${website || 'Not provided'}
-Phone: ${phone || 'Not provided'}
-Interested Package: ${interestedPackage || 'Not specified'}
+    // Send email to you
+    const emailResponse = await resend.emails.send({
+      from: 'SEO Contact Form <onboarding@resend.dev>',
+      to: ['shopwinger9@gmail.com'],
+      subject: `New Contact Form Submission from ${firstName} ${lastName}`,
+      html: `
+        <h2>New Contact Form Submission</h2>
+        <p><strong>Name:</strong> ${firstName} ${lastName}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Company:</strong> ${company || 'Not provided'}</p>
+        <p><strong>Website:</strong> ${website || 'Not provided'}</p>
+        <p><strong>Phone:</strong> ${phone || 'Not provided'}</p>
+        <p><strong>Interested Package:</strong> ${interestedPackage || 'Not specified'}</p>
+        <p><strong>Message:</strong></p>
+        <p>${message}</p>
+        <p><strong>Submitted at:</strong> ${new Date().toISOString()}</p>
+      `,
+    });
 
-Message:
-${message}
+    if (emailResponse.error) {
+      console.error('Email error:', emailResponse.error);
+      throw new Error('Failed to send email');
+    }
 
-Submitted at: ${new Date().toISOString()}
-    `;
-
-    // You can integrate with any email service here
-    // For now, we'll just log it and return success
-    console.log('Email notification:', emailBody);
+    console.log('Email sent successfully:', emailResponse);
 
     return new Response(
       JSON.stringify({ 
