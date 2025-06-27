@@ -1,0 +1,97 @@
+
+import "https://deno.land/x/xhr@0.1.0/mod.ts";
+import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
+import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+
+const corsHeaders = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
+};
+
+serve(async (req) => {
+  if (req.method === 'OPTIONS') {
+    return new Response(null, { headers: corsHeaders });
+  }
+
+  try {
+    const { 
+      firstName, 
+      lastName, 
+      email, 
+      company, 
+      website, 
+      phone,
+      interestedPackage, 
+      message 
+    } = await req.json();
+
+    // Initialize Supabase client
+    const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
+    const supabaseKey = Deno.env.get('SUPABASE_ANON_KEY')!;
+    const supabase = createClient(supabaseUrl, supabaseKey);
+
+    // Save to database
+    const { error: dbError } = await supabase
+      .from('contact_submissions')
+      .insert({
+        first_name: firstName,
+        last_name: lastName,
+        email: email,
+        company: company,
+        website: website,
+        phone: phone,
+        interested_package: interestedPackage,
+        message: message
+      });
+
+    if (dbError) {
+      console.error('Database error:', dbError);
+      throw new Error('Failed to save submission');
+    }
+
+    // Send email notification (using a simple email service)
+    const emailBody = `
+New Contact Form Submission from SEO Your Company
+
+Name: ${firstName} ${lastName}
+Email: ${email}
+Company: ${company || 'Not provided'}
+Website: ${website || 'Not provided'}
+Phone: ${phone || 'Not provided'}
+Interested Package: ${interestedPackage || 'Not specified'}
+
+Message:
+${message}
+
+Submitted at: ${new Date().toISOString()}
+    `;
+
+    // You can integrate with any email service here
+    // For now, we'll just log it and return success
+    console.log('Email notification:', emailBody);
+
+    return new Response(
+      JSON.stringify({ 
+        success: true, 
+        message: 'Contact form submitted successfully' 
+      }),
+      {
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        status: 200,
+      }
+    );
+
+  } catch (error) {
+    console.error('Error in send-contact-email function:', error);
+    return new Response(
+      JSON.stringify({ 
+        error: 'Failed to process contact form',
+        message: error.message 
+      }),
+      {
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        status: 500,
+      }
+    );
+  }
+});

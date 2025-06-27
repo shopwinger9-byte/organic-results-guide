@@ -1,13 +1,33 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Check, Star } from "lucide-react";
+import { Check, Star, Plus } from "lucide-react";
+import { useState } from "react";
+import { Badge } from "@/components/ui/badge";
 
 const Pricing = () => {
+  const [selectedAddons, setSelectedAddons] = useState<{[key: string]: boolean}>({});
+
+  const toggleAddon = (planName: string) => {
+    setSelectedAddons(prev => ({
+      ...prev,
+      [planName]: !prev[planName]
+    }));
+  };
+
+  const handleGetStarted = (planName: string, price: string) => {
+    const params = new URLSearchParams({
+      plan: planName,
+      price: price,
+      addon: selectedAddons[planName] ? 'true' : 'false'
+    });
+    window.open(`/contact?${params.toString()}`, '_blank');
+  };
+
   const plans = [
     {
       name: "Basic",
-      price: "999",
+      price: "799",
       description: "Perfect for small businesses starting their SEO journey",
       features: [
         "Keyword research & strategy",
@@ -15,13 +35,16 @@ const Pricing = () => {
         "Monthly performance reports",
         "Google Analytics setup",
         "5 pages optimized",
-        "Email support"
+        "Email support",
+        "Competitor analysis (basic)",
+        "Meta tags optimization",
+        "XML sitemap creation"
       ],
       popular: false
     },
     {
       name: "Standard",
-      price: "2,499",
+      price: "1,299",
       description: "Comprehensive SEO for growing businesses",
       features: [
         "Everything in Basic",
@@ -29,23 +52,32 @@ const Pricing = () => {
         "Content creation (4 posts/month)",
         "Link building campaign",
         "15 pages optimized",
-        "Competitor analysis",
-        "Priority support"
+        "Advanced competitor analysis",
+        "Priority support",
+        "Local SEO optimization",
+        "Google My Business setup",
+        "Schema markup implementation",
+        "Site speed optimization"
       ],
       popular: true
     },
     {
       name: "Premium",
-      price: "4,999",
+      price: "1,999",
       description: "Advanced SEO for established businesses",
       features: [
         "Everything in Standard",
-        "Advanced link building",
+        "Advanced link building strategy",
         "Content creation (8 posts/month)",
-        "Local SEO optimization",
-        "30 pages optimized",
-        "Custom reporting dashboard",
-        "Dedicated account manager"
+        "25 pages optimized",
+        "Dedicated account manager",
+        "Advanced technical SEO",
+        "E-commerce SEO optimization",
+        "International SEO (multi-language)",
+        "Advanced tracking & analytics",
+        "Conversion rate optimization",
+        "Social media integration",
+        "Video SEO optimization"
       ],
       popular: false
     },
@@ -56,11 +88,14 @@ const Pricing = () => {
       features: [
         "Custom SEO strategy",
         "Multiple website management",
-        "Advanced analytics & reporting",
-        "White-label options",
-        "Unlimited pages optimized",
+        "Enterprise-level reporting",
+        "Dedicated team of specialists",
         "24/7 support",
-        "Quarterly strategy reviews"
+        "Quarterly strategy reviews",
+        "API integrations",
+        "Custom dashboard development",
+        "Advanced competitor intelligence",
+        "Brand reputation management"
       ],
       popular: false
     }
@@ -76,6 +111,9 @@ const Pricing = () => {
           <p className="text-xl text-gray-600">
             Choose the perfect plan for your business. All plans include our satisfaction guarantee.
           </p>
+          <div className="mt-4 text-sm text-gray-500">
+            ✨ Backed by 17+ years of SEO expertise
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -114,10 +152,39 @@ const Pricing = () => {
                     </li>
                   ))}
                 </ul>
+
+                {plan.price !== "Custom" && (
+                  <div className="mb-6 p-4 bg-gradient-to-r from-purple-50 to-blue-50 rounded-lg border border-purple-200">
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <h4 className="font-semibold text-purple-900 flex items-center">
+                          <Plus className="h-4 w-4 mr-1" />
+                          GEO Add-on
+                        </h4>
+                        <p className="text-xs text-purple-700 mt-1">
+                          Generative Engine Optimization
+                        </p>
+                        <p className="text-xs text-purple-600">
+                          Boost brand mentions in ChatGPT, Claude & Gemini
+                        </p>
+                      </div>
+                      <div className="text-right">
+                        <Badge 
+                          variant={selectedAddons[plan.name] ? "default" : "outline"}
+                          className="cursor-pointer"
+                          onClick={() => toggleAddon(plan.name)}
+                        >
+                          +$399
+                        </Badge>
+                      </div>
+                    </div>
+                  </div>
+                )}
                 
                 <Button 
                   className={`w-full ${plan.popular ? 'bg-blue-600 hover:bg-blue-700' : ''}`}
                   variant={plan.popular ? 'default' : 'outline'}
+                  onClick={() => handleGetStarted(plan.name, plan.price)}
                 >
                   {plan.price === "Custom" ? "Contact Sales" : "Get Started"}
                 </Button>
@@ -130,7 +197,11 @@ const Pricing = () => {
           <p className="text-gray-600 mb-4">
             Not sure which plan is right for you?
           </p>
-          <Button variant="outline" size="lg">
+          <Button 
+            variant="outline" 
+            size="lg"
+            onClick={() => window.open('https://calendly.com/consult-seoyourcompany/30min', '_blank')}
+          >
             Schedule a Free Consultation
           </Button>
         </div>
