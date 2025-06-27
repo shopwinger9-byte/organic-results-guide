@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { TrendingUp, Users, Award } from "lucide-react";
 
@@ -18,10 +17,19 @@ const Hero = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-lg px-8 py-3">
+            <Button 
+              size="lg" 
+              className="bg-blue-600 hover:bg-blue-700 text-lg px-8 py-3"
+              onClick={() => window.location.href = '/contact'}
+            >
               Get Free SEO Audit
             </Button>
-            <Button variant="outline" size="lg" className="text-lg px-8 py-3">
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="text-lg px-8 py-3"
+              onClick={() => window.location.href = '/case-studies'}
+            >
               View Case Studies
             </Button>
           </div>

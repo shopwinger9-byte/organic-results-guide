@@ -26,24 +26,24 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Services</h3>
             <ul className="space-y-2 text-gray-400">
-              <li><a href="#" className="hover:text-white transition-colors">Keyword Research</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">On-Page SEO</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Technical SEO</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Link Building</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Local SEO</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Content Strategy</a></li>
+              <li><a href="/keyword-research" className="hover:text-white transition-colors">Keyword Research</a></li>
+              <li><a href="/on-page-seo" className="hover:text-white transition-colors">On-Page SEO</a></li>
+              <li><a href="/technical-seo" className="hover:text-white transition-colors">Technical SEO</a></li>
+              <li><a href="/link-building" className="hover:text-white transition-colors">Link Building</a></li>
+              <li><a href="/local-seo" className="hover:text-white transition-colors">Local SEO</a></li>
+              <li><a href="/content-strategy" className="hover:text-white transition-colors">Content Strategy</a></li>
             </ul>
           </div>
 
           <div>
             <h3 className="text-lg font-semibold mb-4">Company</h3>
             <ul className="space-y-2 text-gray-400">
-              <li><a href="#" className="hover:text-white transition-colors">About Us</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Case Studies</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Blog</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Careers</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Contact</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
+              <li><a href="/about" className="hover:text-white transition-colors">About Us</a></li>
+              <li><a href="/case-studies" className="hover:text-white transition-colors">Case Studies</a></li>
+              <li><a href="/blog" className="hover:text-white transition-colors">Blog</a></li>
+              <li><a href="/careers" className="hover:text-white transition-colors">Careers</a></li>
+              <li><a href="/contact" className="hover:text-white transition-colors">Contact</a></li>
+              <li><a href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</a></li>
             </ul>
           </div>
         </div>
@@ -54,9 +54,9 @@ const Footer = () => {
               © 2024 SEOYourCompany. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Terms of Service</a>
-              <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a>
-              <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Cookie Policy</a>
+              <a href="/terms-of-service" className="text-gray-400 hover:text-white text-sm transition-colors">Terms of Service</a>
+              <a href="/privacy-policy" className="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a>
+              <a href="/cookie-policy" className="text-gray-400 hover:text-white text-sm transition-colors">Cookie Policy</a>
             </div>
           </div>
         </div>
