@@ -15,6 +15,11 @@ const Footer = () => {
               We help businesses dominate search results and drive organic growth through 
               proven SEO strategies and transparent reporting.
             </p>
+            <div className="mb-6">
+              <p className="text-gray-400">
+                Email: <a href="mailto:consult@seoyourcompany.com" className="text-blue-400 hover:text-blue-300">consult@seoyourcompany.com</a>
+              </p>
+            </div>
             <div className="flex space-x-4">
               <Facebook className="h-6 w-6 text-gray-400 hover:text-blue-400 cursor-pointer transition-colors" />
               <Twitter className="h-6 w-6 text-gray-400 hover:text-blue-400 cursor-pointer transition-colors" />

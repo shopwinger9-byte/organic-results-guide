@@ -56,7 +56,7 @@ serve(async (req) => {
     // Send email to you
     const emailResponse = await resend.emails.send({
       from: 'SEO Contact Form <onboarding@resend.dev>',
-      to: ['shopwinger9@gmail.com'],
+      to: ['consult@seoyourcompany.com'],
       subject: `New Contact Form Submission from ${firstName} ${lastName}`,
       html: `
         <h2>New Contact Form Submission</h2>

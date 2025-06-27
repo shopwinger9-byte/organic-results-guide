@@ -1,11 +1,10 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Mail, Phone, MapPin, Calendar, Award } from "lucide-react";
+import { Mail, Calendar, Award } from "lucide-react";
 import { useState, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
@@ -277,15 +276,7 @@ const Contact = () => {
                 <div className="space-y-3">
                   <div className="flex items-center">
                     <Mail className="h-5 w-5 text-blue-600 mr-3" />
-                    <span className="text-gray-700">shopwinger9@gmail.com</span>
-                  </div>
-                  <div className="flex items-center">
-                    <Phone className="h-5 w-5 text-blue-600 mr-3" />
-                    <span className="text-gray-700">+1 (555) 123-4567</span>
-                  </div>
-                  <div className="flex items-center">
-                    <MapPin className="h-5 w-5 text-blue-600 mr-3" />
-                    <span className="text-gray-700">New York, NY</span>
+                    <span className="text-gray-700">consult@seoyourcompany.com</span>
                   </div>
                 </div>
               </div>
