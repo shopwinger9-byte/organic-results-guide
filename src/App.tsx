@@ -24,6 +24,15 @@ import LocalSEO from "./pages/LocalSEO";
 import ContentStrategy from "./pages/ContentStrategy";
 import NotFound from "./pages/NotFound";
 
+// Individual Service Landing Pages
+import KeywordResearchStrategy from "./pages/services/KeywordResearchStrategy";
+import OnPageSEOService from "./pages/services/OnPageSEOService";
+import TechnicalSEOService from "./pages/services/TechnicalSEOService";
+import LinkBuildingService from "./pages/services/LinkBuildingService";
+import LocalSEOService from "./pages/services/LocalSEOService";
+import AnalyticsReportingService from "./pages/services/AnalyticsReportingService";
+import SEOConsultation from "./pages/services/SEOConsultation";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -51,6 +60,16 @@ const App = () => (
           <Route path="/link-building" element={<LinkBuilding />} />
           <Route path="/local-seo" element={<LocalSEO />} />
           <Route path="/content-strategy" element={<ContentStrategy />} />
+          
+          {/* Individual Service Landing Pages */}
+          <Route path="/services/keyword-research-strategy" element={<KeywordResearchStrategy />} />
+          <Route path="/services/on-page-seo" element={<OnPageSEOService />} />
+          <Route path="/services/technical-seo" element={<TechnicalSEOService />} />
+          <Route path="/services/link-building" element={<LinkBuildingService />} />
+          <Route path="/services/local-seo" element={<LocalSEOService />} />
+          <Route path="/services/analytics-reporting" element={<AnalyticsReportingService />} />
+          <Route path="/services/seo-consultation" element={<SEOConsultation />} />
+          
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

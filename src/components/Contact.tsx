@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -27,6 +28,7 @@ const Contact = () => {
     // Get URL parameters to pre-fill form
     const urlParams = new URLSearchParams(window.location.search);
     const plan = urlParams.get('plan');
+    const service = urlParams.get('service');
     const addon = urlParams.get('addon');
     
     if (plan) {
@@ -35,6 +37,8 @@ const Contact = () => {
         packageName += ' + GEO Add-on';
       }
       setFormData(prev => ({ ...prev, interestedPackage: packageName }));
+    } else if (service) {
+      setFormData(prev => ({ ...prev, interestedPackage: service }));
     }
   }, []);
 
@@ -174,19 +178,28 @@ const Contact = () => {
                   </div>
                   
                   <div>
-                    <Label htmlFor="package">Interested Package</Label>
+                    <Label htmlFor="package">Interested Service/Package</Label>
                     <Select value={formData.interestedPackage} onValueChange={(value) => handleInputChange('interestedPackage', value)}>
                       <SelectTrigger>
-                        <SelectValue placeholder="Select a package" />
+                        <SelectValue placeholder="Select a service or package" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="basic">Basic - $799/month</SelectItem>
-                        <SelectItem value="standard">Standard - $1,299/month</SelectItem>
-                        <SelectItem value="premium">Premium - $1,999/month</SelectItem>
-                        <SelectItem value="enterprise">Enterprise - Custom</SelectItem>
+                        <SelectItem value="basic">Basic Package - $799/month</SelectItem>
+                        <SelectItem value="standard">Standard Package - $1,299/month</SelectItem>
+                        <SelectItem value="premium">Premium Package - $1,999/month</SelectItem>
+                        <SelectItem value="enterprise">Enterprise Package - Custom</SelectItem>
                         <SelectItem value="basic-geo">Basic + GEO - $1,198/month</SelectItem>
                         <SelectItem value="standard-geo">Standard + GEO - $1,698/month</SelectItem>
                         <SelectItem value="premium-geo">Premium + GEO - $2,398/month</SelectItem>
+                        <SelectItem value="keyword-research">Keyword Research & Strategy - $399/month</SelectItem>
+                        <SelectItem value="on-page-seo">On-Page SEO - $499/month</SelectItem>
+                        <SelectItem value="technical-seo">Technical SEO - $699/month</SelectItem>
+                        <SelectItem value="link-building">Link Building - $899/month</SelectItem>
+                        <SelectItem value="local-seo">Local SEO - $599/month</SelectItem>
+                        <SelectItem value="analytics-reporting">Analytics & Reporting - $299/month</SelectItem>
+                        <SelectItem value="consultation-free">Free 15-Min Consultation</SelectItem>
+                        <SelectItem value="consultation-60min">60-Min SEO Session - $50</SelectItem>
+                        <SelectItem value="consultation-package">Comprehensive Consultancy Package - $499</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
