@@ -14,6 +14,60 @@ export type Database = {
   }
   public: {
     Tables: {
+      careers_applications: {
+        Row: {
+          availability_date: string | null
+          cover_letter: string | null
+          created_at: string
+          email: string
+          experience_years: number | null
+          first_name: string
+          id: string
+          last_name: string
+          linkedin_url: string | null
+          phone: string | null
+          portfolio_url: string | null
+          position: string
+          resume_url: string | null
+          salary_expectation: string | null
+          updated_at: string
+        }
+        Insert: {
+          availability_date?: string | null
+          cover_letter?: string | null
+          created_at?: string
+          email: string
+          experience_years?: number | null
+          first_name: string
+          id?: string
+          last_name: string
+          linkedin_url?: string | null
+          phone?: string | null
+          portfolio_url?: string | null
+          position: string
+          resume_url?: string | null
+          salary_expectation?: string | null
+          updated_at?: string
+        }
+        Update: {
+          availability_date?: string | null
+          cover_letter?: string | null
+          created_at?: string
+          email?: string
+          experience_years?: number | null
+          first_name?: string
+          id?: string
+          last_name?: string
+          linkedin_url?: string | null
+          phone?: string | null
+          portfolio_url?: string | null
+          position?: string
+          resume_url?: string | null
+          salary_expectation?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
       contact_submissions: {
         Row: {
           company: string | null
