@@ -12,7 +12,7 @@ const ServicesPage = () => {
       title: "Keyword Research & Strategy",
       description: "Comprehensive keyword analysis to identify high-value opportunities that align with your business goals and target audience.",
       features: ["Competitor keyword analysis", "Search intent mapping", "Long-tail keyword discovery", "Keyword difficulty assessment", "Local keyword research", "Seasonal trend analysis"],
-      link: "/services/keyword-research"
+      link: "/services/keyword-research-strategy"
     },
     {
       icon: FileText,

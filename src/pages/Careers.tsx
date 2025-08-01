@@ -1,6 +1,7 @@
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CareersForm from "@/components/CareersForm";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { MapPin, Clock, DollarSign, Users, TrendingUp, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -170,6 +171,8 @@ const Careers = () => {
             </div>
           </div>
         </section>
+        
+        <CareersForm />
       </div>
       <Footer />
     </div>

@@ -31,12 +31,12 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Services</h3>
             <ul className="space-y-2 text-gray-400">
-              <li><a href="/keyword-research" className="hover:text-white transition-colors">Keyword Research</a></li>
-              <li><a href="/on-page-seo" className="hover:text-white transition-colors">On-Page SEO</a></li>
-              <li><a href="/technical-seo" className="hover:text-white transition-colors">Technical SEO</a></li>
-              <li><a href="/link-building" className="hover:text-white transition-colors">Link Building</a></li>
-              <li><a href="/local-seo" className="hover:text-white transition-colors">Local SEO</a></li>
-              <li><a href="/content-strategy" className="hover:text-white transition-colors">Content Strategy</a></li>
+              <li><a href="/services/keyword-research-strategy" className="hover:text-white transition-colors">Keyword Research</a></li>
+              <li><a href="/services/on-page-seo" className="hover:text-white transition-colors">On-Page SEO</a></li>
+              <li><a href="/services/technical-seo" className="hover:text-white transition-colors">Technical SEO</a></li>
+              <li><a href="/services/link-building" className="hover:text-white transition-colors">Link Building</a></li>
+              <li><a href="/services/local-seo" className="hover:text-white transition-colors">Local SEO</a></li>
+              <li><a href="/services/content-strategy" className="hover:text-white transition-colors">Content Strategy</a></li>
             </ul>
           </div>
 
@@ -56,7 +56,7 @@ const Footer = () => {
         <div className="border-t border-gray-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
-              © 2024 SEOYourCompany. All rights reserved.
+              © 2025 SEOYourCompany. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a href="/terms-of-service" className="text-gray-400 hover:text-white text-sm transition-colors">Terms of Service</a>

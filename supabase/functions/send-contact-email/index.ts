@@ -53,10 +53,10 @@ serve(async (req) => {
     // Initialize Resend
     const resend = new Resend('re_bADrfeEs_DvyopW54X3w7aGvm4otGbFnT');
 
-    // Send email to you
+    // Send email to you (using verified email for testing)
     const emailResponse = await resend.emails.send({
       from: 'SEO Contact Form <onboarding@resend.dev>',
-      to: ['consult@seoyourcompany.com'],
+      to: ['shopwinger9@gmail.com'], // Using verified email address for now
       subject: `New Contact Form Submission from ${firstName} ${lastName}`,
       html: `
         <h2>New Contact Form Submission</h2>

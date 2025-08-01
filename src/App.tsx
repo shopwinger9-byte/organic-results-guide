@@ -31,6 +31,7 @@ import TechnicalSEOService from "./pages/services/TechnicalSEOService";
 import LinkBuildingService from "./pages/services/LinkBuildingService";
 import LocalSEOService from "./pages/services/LocalSEOService";
 import AnalyticsReportingService from "./pages/services/AnalyticsReportingService";
+import ContentStrategyService from "./pages/services/ContentStrategyService";
 import SEOConsultation from "./pages/services/SEOConsultation";
 
 const queryClient = new QueryClient();
@@ -68,6 +69,7 @@ const App = () => (
           <Route path="/services/link-building" element={<LinkBuildingService />} />
           <Route path="/services/local-seo" element={<LocalSEOService />} />
           <Route path="/services/analytics-reporting" element={<AnalyticsReportingService />} />
+          <Route path="/services/content-strategy" element={<ContentStrategyService />} />
           <Route path="/services/seo-consultation" element={<SEOConsultation />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
