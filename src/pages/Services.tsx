@@ -176,8 +176,7 @@ const ServicesPage = () => {
               </Button>
               <Button 
                 size="lg" 
-                variant="outline"
-                className="text-lg px-8 py-3 border-white text-white hover:text-blue-600"
+                className="text-lg px-8 py-3 bg-white text-blue-600 hover:bg-blue-50 border border-white"
                 onClick={() => window.open('https://calendly.com/consult-seoyourcompany/30min', '_blank')}
               >
                 Schedule Consultation

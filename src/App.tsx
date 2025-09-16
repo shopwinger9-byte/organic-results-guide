@@ -34,6 +34,16 @@ import AnalyticsReportingService from "./pages/services/AnalyticsReportingServic
 import ContentStrategyService from "./pages/services/ContentStrategyService";
 import SEOConsultation from "./pages/services/SEOConsultation";
 
+// Pricing Plan Pages
+import BasicPlan from "./pages/pricing/BasicPlan";
+import StandardPlan from "./pages/pricing/StandardPlan";
+import PremiumPlan from "./pages/pricing/PremiumPlan";
+import EnterprisePlan from "./pages/pricing/EnterprisePlan";
+import StartupBoost from "./pages/pricing/StartupBoost";
+import EcommerceSEO from "./pages/pricing/EcommerceSEO";
+import LocalBusiness from "./pages/pricing/LocalBusiness";
+import ContentMarketing from "./pages/pricing/ContentMarketing";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -71,6 +81,16 @@ const App = () => (
           <Route path="/services/analytics-reporting" element={<AnalyticsReportingService />} />
           <Route path="/services/content-strategy" element={<ContentStrategyService />} />
           <Route path="/services/seo-consultation" element={<SEOConsultation />} />
+          
+          {/* Pricing Plan Pages */}
+          <Route path="/pricing/basic" element={<BasicPlan />} />
+          <Route path="/pricing/standard" element={<StandardPlan />} />
+          <Route path="/pricing/premium" element={<PremiumPlan />} />
+          <Route path="/pricing/enterprise" element={<EnterprisePlan />} />
+          <Route path="/pricing/startup-boost" element={<StartupBoost />} />
+          <Route path="/pricing/ecommerce-seo" element={<EcommerceSEO />} />
+          <Route path="/pricing/local-business" element={<LocalBusiness />} />
+          <Route path="/pricing/content-marketing" element={<ContentMarketing />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
