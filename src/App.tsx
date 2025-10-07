@@ -11,6 +11,17 @@ import PricingPage from "./pages/PricingPage";
 import Contact from "./pages/Contact";
 import CaseStudies from "./pages/CaseStudies";
 import TechStartupCaseStudy from "./pages/case-studies/TechStartup";
+import RestaurantChainCaseStudy from "./pages/case-studies/RestaurantChain";
+import FashionBrandCaseStudy from "./pages/case-studies/FashionBrand";
+import HealthcareClinicCaseStudy from "./pages/case-studies/HealthcareClinic";
+import LegalFirmCaseStudy from "./pages/case-studies/LegalFirm";
+import RealEstateCaseStudy from "./pages/case-studies/RealEstate";
+import FitnessStudioCaseStudy from "./pages/case-studies/FitnessStudio";
+import ManufacturingCaseStudy from "./pages/case-studies/Manufacturing";
+import DentalPracticeCaseStudy from "./pages/case-studies/DentalPractice";
+import HomeServicesCaseStudy from "./pages/case-studies/HomeServices";
+import FinancialServicesCaseStudy from "./pages/case-studies/FinancialServices";
+import EducationCaseStudy from "./pages/case-studies/Education";
 import Blog from "./pages/Blog";
 import Careers from "./pages/Careers";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
@@ -60,6 +71,17 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           <Route path="/case-studies" element={<CaseStudies />} />
           <Route path="/case-studies/tech-startup" element={<TechStartupCaseStudy />} />
+          <Route path="/case-studies/restaurant-chain" element={<RestaurantChainCaseStudy />} />
+          <Route path="/case-studies/fashion-brand" element={<FashionBrandCaseStudy />} />
+          <Route path="/case-studies/healthcare-clinic" element={<HealthcareClinicCaseStudy />} />
+          <Route path="/case-studies/legal-firm" element={<LegalFirmCaseStudy />} />
+          <Route path="/case-studies/real-estate" element={<RealEstateCaseStudy />} />
+          <Route path="/case-studies/fitness-studio" element={<FitnessStudioCaseStudy />} />
+          <Route path="/case-studies/manufacturing" element={<ManufacturingCaseStudy />} />
+          <Route path="/case-studies/dental-practice" element={<DentalPracticeCaseStudy />} />
+          <Route path="/case-studies/home-services" element={<HomeServicesCaseStudy />} />
+          <Route path="/case-studies/financial-services" element={<FinancialServicesCaseStudy />} />
+          <Route path="/case-studies/education" element={<EducationCaseStudy />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
